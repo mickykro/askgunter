@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1022538933497-v6ath6gv5j5t6jdlhgk20dg0f1dhjknm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1022538933497-v6ath6gv5j5t6jdlhgk20dg0f1dhjknm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCJExMpoRe2Jyd1-ZV-bqTIHz2cHcyW5HA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1022538933497</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.webviewTest</string>
+	<key>PROJECT_ID</key>
+	<string>askguntercms</string>
+	<key>STORAGE_BUCKET</key>
+	<string>askguntercms.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1022538933497:ios:8acc8c7d278f72c360ee28</string>
+	<key>DATABASE_URL</key>
+	<string>https://askguntercms.firebaseio.com</string>
+</dict>
+</plist>
