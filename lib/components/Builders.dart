@@ -162,6 +162,9 @@ class SocialButton extends StatelessWidget {
       onPressed: socialLogin,
       child: Container(
         margin: EdgeInsets.only(top: 10.0, left: 60.0, right: 60.0),
+        padding: EdgeInsets.symmetric(
+          vertical: 5,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.0),
           color: color,
@@ -495,51 +498,48 @@ class _SideBarState extends State<SideBarFav> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 400,
+                      Expanded(
                         child: ListView(
                           children: <Widget>[
                             ...widget.allBots,
                           ],
                         ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                            margin: EdgeInsets.only(bottom: 20, right: 10),
+                            child: FlatButton(
+                              onPressed: () {
+                                /**
+                                 * signOut button says logOut
+                                 * */
+                                widget.auth.signOut();
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => WelcomePage()));
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: <Widget>[
+                                  Text(
+                                    'log Out',
+                                    style: TextStyle(
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(Icons.exit_to_app)
+                                ],
+                              ),
+                            )),
                       )
                     ],
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                      margin: EdgeInsets.only(bottom: 20, right: 10),
-                      child: Container(
-                        child: FlatButton(
-                          onPressed: () {
-                            /**
-                             * signOut button says logOut
-                             * */
-                            widget.auth.signOut();
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WelcomePage()));
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: <Widget>[
-                              Text(
-                                'log Out',
-                                style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(Icons.exit_to_app)
-                            ],
-                          ),
-                        ),
-                      )),
-                )
               ],
             ),
           ),
