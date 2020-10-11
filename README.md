@@ -9,7 +9,7 @@
 </html>
  ##main screen
  <html>
-  <img src="/images/FavScreenShot.png" alt="favorites screen" width="300"/>
+  <img src="/images/FavScreenshot.png" alt="favorites screen" width="300"/>
  </html>
 
 
