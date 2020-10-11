@@ -4,7 +4,7 @@
  ## The app provides access to the bots, saving favorite bots and search for a specific bot.
 
 main screen 
-![Main Screen](/images/MainScreenShot.png = 100*200)
+![Main Screen](/images/MainScreenShot.png =100x200)
 
 favorites connected to google with profile picture and name loaded from user
 ![favorites](images/FavScreenshot.png)
