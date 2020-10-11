@@ -14,6 +14,11 @@
  <h2>favorites connected to google with profile picture and name loaded from user</h2>
   <img src="/images/FavScreenshot.png" alt="favorites screen" width="300"/>
  </html>
+ 
+ <html>
+  <h2>chat screen</h2>
+   <img src="/images/ChatScreenshot.png" alt="favorites screen" width="300"/>
+  </html>
 
 
 
