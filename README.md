@@ -7,11 +7,11 @@
 <html>
  <img src="/images/MainScreenShot.png" alt="main screen" width="300"/>
 </html>
- ##main screen
+ 
+ ##favorites connected to google with profile picture and name loaded from user
  <html>
   <img src="/images/FavScreenshot.png" alt="favorites screen" width="300"/>
  </html>
 
 
-favorites connected to google with profile picture and name loaded from user
-![favorites](images/FavScreenshot.png)
+
