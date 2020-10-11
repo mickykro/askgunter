@@ -3,6 +3,8 @@
  ### by turning them into a Chatbot. 
  ## The app provides access to the bots, saving favorite bots and search for a specific bot.
 
-![Main Screen](/images/MainScreenShot.png)
+main screen 
+![Main Screen](/images/MainScreenShot.png = 100*200)
 
+favorites connected to google with profile picture and name loaded from user
 ![favorites](images/FavScreenshot.png)
