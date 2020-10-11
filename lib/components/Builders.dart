@@ -419,158 +419,179 @@ class _SideBarState extends State<SideBarFav> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.width;
-    return AnimatedPositioned(
-      top: 0,
-      bottom: 0,
-      left: isSideBarOpenned ? 0 : -screenWidth,
-      right: isSideBarOpenned ? 0 : screenWidth - 125,
-      duration: Duration(milliseconds: 500),
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  color: Colors.white,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        key: widget.containerKey,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.all(15),
-                              child: CircleAvatar(
-                                radius: 55,
-                                backgroundColor: Colors.white,
-                                child: CircleAvatar(
-                                    radius: 50,
-                                    backgroundImage: (StaticObjects
-                                                .user.photoUrl !=
-                                            null)
-                                        ? NetworkImage(
-                                            StaticObjects.user.photoUrl)
-                                        : AssetImage(
-                                            'images/askgunterLogoNoSub.png')),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.all(15),
-                              child: (StaticObjects.user.displayName != null)
-                                  ? Text(
-                                      StaticObjects.user.displayName,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    )
-                                  : Text(
-                                      StaticObjects.user.email,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Expanded(
-                                  child: Container(
-                                      color: Colors.white,
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 20),
-                                      margin: EdgeInsets.only(bottom: 3),
-                                      child: Text(
-                                        'My Assistants',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: Color(0xff008eff),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      )),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: ListView(
-                          children: <Widget>[
-                            ...widget.allBots,
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Container(
-                            margin: EdgeInsets.only(bottom: 20, right: 10),
-                            child: FlatButton(
-                              onPressed: () {
-                                /**
-                                 * signOut button says logOut
-                                 * */
-                                widget.auth.signOut();
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => WelcomePage()));
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  Text(
-                                    'log Out',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Icon(Icons.exit_to_app)
-                                ],
-                              ),
-                            )),
-                      )
-                    ],
-                  ),
-                ),
-              ],
+    return Stack(
+      children: <Widget>[
+        AnimatedPositioned(
+          top: 0,
+          bottom: 0,
+          left: isSideBarOpenned ? 0 : -screenWidth,
+          right: isSideBarOpenned ? 0 : screenWidth,
+          duration: Duration(milliseconds: 400),
+          child: AnimatedOpacity(
+            opacity: isSideBarOpenned ? 0.9 : 00,
+            duration: Duration(milliseconds: 500),
+            child: Container(
+              color: Color(0xff008eff),
             ),
           ),
-          Align(
-            alignment: Alignment(0, -0.9),
-            child: GestureDetector(
-              onTap: () async {
+        ),
+        AnimatedPositioned(
+          top: 0,
+          bottom: 0,
+          left: isSideBarOpenned ? 0 : -screenWidth,
+          right: isSideBarOpenned ? 0 : screenWidth - 125,
+          duration: Duration(milliseconds: 500),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      color: Colors.white,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            key: widget.containerKey,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.all(15),
+                                  child: CircleAvatar(
+                                    radius: 55,
+                                    backgroundColor: Colors.white,
+                                    child: CircleAvatar(
+                                        radius: 50,
+                                        backgroundImage: (StaticObjects
+                                                    .user.photoUrl !=
+                                                null)
+                                            ? NetworkImage(
+                                                StaticObjects.user.photoUrl)
+                                            : AssetImage(
+                                                'images/askgunterLogoNoSub.png')),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.all(15),
+                                  child:
+                                      (StaticObjects.user.displayName != null)
+                                          ? Text(
+                                              StaticObjects.user.displayName,
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            )
+                                          : Text(
+                                              StaticObjects.user.email,
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Expanded(
+                                      child: Container(
+                                          color: Colors.white,
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 20, vertical: 20),
+                                          margin: EdgeInsets.only(bottom: 3),
+                                          child: Text(
+                                            'My Assistants',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: Color(0xff008eff),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          )),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: ListView(
+                              children: <Widget>[
+                                ...widget.allBots,
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Container(
+                                margin: EdgeInsets.only(bottom: 20, right: 10),
+                                child: FlatButton(
+                                  onPressed: () {
+                                    /**
+                                     * signOut button says logOut
+                                     * */
+                                    widget.auth.signOut();
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                WelcomePage()));
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      Text(
+                                        'log Out',
+                                        style: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Icon(Icons.exit_to_app)
+                                    ],
+                                  ),
+                                )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Align(
+                alignment: Alignment(0, -0.9),
+                child: GestureDetector(
+                  onTap: () async {
 //                print(StaticObjects.email);
 //                await getbotsFromDB(StaticObjects.email, 'favorites');
-                setState(() {
-                  widget.setter();
-                  isSideBarOpenned = !isSideBarOpenned;
-                });
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(25),
-                        bottomRight: Radius.circular(25))),
-                width: 45,
-                height: 50,
-                child: isSideBarOpenned ? Icon(Icons.clear) : Icon(Icons.menu),
+                    setState(() {
+                      widget.setter();
+                      isSideBarOpenned = !isSideBarOpenned;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.5),
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(25),
+                            bottomRight: Radius.circular(25))),
+                    width: 45,
+                    height: 50,
+                    child:
+                        isSideBarOpenned ? Icon(Icons.clear) : Icon(Icons.menu),
+                  ),
+                ),
               ),
-            ),
+              SizedBox(
+                width: 80,
+              )
+            ],
           ),
-          SizedBox(
-            width: 80,
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
